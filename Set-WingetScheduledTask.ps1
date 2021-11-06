@@ -1,5 +1,6 @@
 $Winget = Get-ChildItem -Path (Join-Path -Path (Join-Path -Path $env:ProgramFiles -ChildPath "WindowsApps") -ChildPath "Microsoft.DesktopAppInstaller*_x64*\AppInstallerCLI.exe")
 
+# https://docs.microsoft.com/en-us/windows/package-manager/winget/upgrade#options
 $Options = "upgrade --all -h --accept-package-agreements --accept-source-agreements"
 
 $TaskAction = New-ScheduledTaskAction -Execute $Winget -Argument $Options
